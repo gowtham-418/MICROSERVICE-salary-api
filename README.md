@@ -63,13 +63,3 @@ make setup
 ```
 
 For further details checkout [GETTING_STARTED](./GETTING_STARTED.md)
-
-## Release History
-
-Please see our [CHNANGELOG.md](./CHNANGELOG.md) for details.
-
-## Contact
-
-If you have any suggestion or query. Contact us at
-
-opensource@opstree.com
