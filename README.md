@@ -44,11 +44,6 @@ The architecture of the complete microservice interaction looks like this:-
   <img src="./static/architecture.png">
 </div>
 
-## Screenshot
-
-<div align="center">
-  <img src="./static/frontend.png">
-</div>
 
 ## Quickstart
 
