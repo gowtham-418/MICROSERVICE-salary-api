@@ -34,7 +34,7 @@ jobs:
 
 
 
-    - name: docker-build
+    - name: docker-builds
       working-directory: ./frontend
       env:
         GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
