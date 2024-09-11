@@ -22,22 +22,25 @@ jobs:
     #     npm audit fix --force
 
     - name: make-build
-      run: frontend/make build
+      working-directory: ./frontend
+      run: make build
          
 
 
     - name: serer-build
-      run: frontend/serve -s build
+      working-directory: ./frontend
+      run: serve -s build
 
 
 
 
     - name: docker-build
+      working-directory: ./frontend
       env:
         GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
       run: |
         gcloud auth configure-docker us-central1-docker.pkg.dev
-        frontend/make docker-build
+        make docker-build
 
 
 
