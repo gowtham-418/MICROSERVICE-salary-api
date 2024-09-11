@@ -22,12 +22,12 @@ jobs:
     #     npm audit fix --force
 
     - name: make-build
-      run: ./frontend/make build
+      run: frontend/make build
          
 
 
     - name: serer-build
-      run: ./frontend/serve -s build
+      run: frontend/serve -s build
 
 
 
@@ -37,7 +37,7 @@ jobs:
         GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
       run: |
         gcloud auth configure-docker us-central1-docker.pkg.dev
-        ./frontend/make docker-build
+        frontend/make docker-build
 
 
 
