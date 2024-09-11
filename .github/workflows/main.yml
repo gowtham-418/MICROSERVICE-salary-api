@@ -16,21 +16,28 @@ jobs:
         service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
         export_default_credentials: true
 
-    - name: npm fix
-      run: |
-        npm install --package-lock-only
-        npm audit fix --force
+    # - name: npm fix
+    #   run: |
+    #     npm install --package-lock-only
+    #     npm audit fix --force
 
-    - name: docker-builds
-      run: make build
+    - name: make-build
+      run: gowtham-418/MICROSERVICE-salary-api/frontend/make build
+         
 
 
-    - name: First builds
+    - name: serer-build
+      run: gowtham-418/MICROSERVICE-salary-api/frontend/serve -s build
+
+
+
+
+    - name: docker-build
       env:
         GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
       run: |
         gcloud auth configure-docker us-central1-docker.pkg.dev
-        make docker-build
+        gowtham-418/MICROSERVICE-salary-api/frontend/make docker-build
 
 
 
